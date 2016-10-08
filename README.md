@@ -15,4 +15,4 @@ The suite offers different tools for the following tasks:
     * *Run*: Run a typechef analysis
 * **BenchmarkSuite**
     * *Run*: Run a benchmark analysis
-    
+* **UI**
