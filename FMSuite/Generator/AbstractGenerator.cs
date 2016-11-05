@@ -9,7 +9,7 @@ namespace FMSuite.Generator
 {
 
     /// <summary>
-    /// 
+    ///     Abstract base class for generators. Contains the default constructor.
     /// </summary>
     abstract class AbstractGenerator : IGenerator
     {
@@ -20,14 +20,14 @@ namespace FMSuite.Generator
         protected const char NEWLINE = '\n';
 
         /// <summary>
-        /// 
+        ///     The meta feature model to generate the export from.
         /// </summary>
         protected FeatureModel featureModel;
 
         /// <summary>
-        /// 
+        ///     Initializes the generator.
         /// </summary>
-        /// <param name="featureModel"></param>
+        /// <param name="featureModel">The meta feature model to generate the export from.</param>
         public AbstractGenerator(FeatureModel featureModel)
         {
             this.featureModel = featureModel;

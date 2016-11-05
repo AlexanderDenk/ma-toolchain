@@ -8,15 +8,15 @@ namespace FMSuite.Generator
 {
 
     /// <summary>
-    /// 
+    ///     Interface for generators that convert the meta feature model into an export model.
     /// </summary>
     interface IGenerator
     {
 
         /// <summary>
-        /// 
+        ///     Generate the export file.
         /// </summary>
-        /// <param name="targetFile"></param>
+        /// <param name="targetFile">The path of the export file.</param>
         void Generate(string targetFile);
 
     }
