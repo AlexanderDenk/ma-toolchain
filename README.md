@@ -16,5 +16,6 @@ The suite offers different tools for the following tasks:
     * *Run:* Run a benchmark analysis
 * **ReportingSuite:**
     * *ExportConfigurations:* Exports the configurations to a file.
+    * *ExportExclusions:* Exports the configurations to exclude file.
     * *ExportMeasurements:* Exports the measurements to a file.
 * **UI:**
