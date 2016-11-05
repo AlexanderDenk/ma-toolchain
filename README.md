@@ -17,5 +17,6 @@ The suite offers different tools for the following tasks:
 * **ReportingSuite:**
     * *ExportConfigurations:* Exports the configurations to a file.
     * *ExportExclusions:* Exports the configurations to exclude file.
+    * *ExportFeatureFailureStatistics:* Exports number of configurations for each feature that was damaged.
     * *ExportMeasurements:* Exports the measurements to a file.
 * **UI:**
