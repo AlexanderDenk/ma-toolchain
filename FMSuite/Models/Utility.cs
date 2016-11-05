@@ -55,6 +55,21 @@ namespace FMSuite.Models
         private const string COMMUNICATION_PBL_FILE_OUTPUT = "expressionFileOutput";
 
         /// <summary>
+        ///     Path to the PBL frontend (TODO: Setting!).
+        /// </summary>
+        private const string PBL_FRONTEND = @"../../External/CNFGenerator.py";
+
+        /// <summary>
+        ///     Path to the PBL library (TODO: Setting!).
+        /// </summary>
+        private const string PBL_LIBRARY = @"../../External/PBL/include";
+
+        /// <summary>
+        ///     Path to the Python Standard Library (TODO: Setting!).
+        /// </summary>
+        private const string PYTHON_LIBRARY = @"../../Lib";
+
+        /// <summary>
         ///     The character used for representing disjunctions.
         /// </summary>
         private const char BOOL_DISJUNCTION = '|';
@@ -145,15 +160,15 @@ namespace FMSuite.Models
 
             /* Setup the search paths for the libraries. */
             ICollection<string> paths = engine.GetSearchPaths();
-            paths.Add(@"../../Lib");
-            paths.Add(@"../../External/PBL/include");
+            paths.Add(Utility.PYTHON_LIBRARY);
+            paths.Add(Utility.PBL_LIBRARY);
             engine.SetSearchPaths(paths);
 
             /* Pass the variables containing the files and run the conversion. */
             ScriptScope scope = engine.CreateScope();
             scope.SetVariable(Utility.COMMUNICATION_PBL_FILE_INPUT, expressionFileInput);
             scope.SetVariable(Utility.COMMUNICATION_PBL_FILE_OUTPUT, expressionFileOutput);
-            engine.ExecuteFile(@"../../External/CNFGenerator.py", scope);
+            engine.ExecuteFile(Utility.PBL_FRONTEND, scope);
 
             /* Read the result. */
             IEnumerable<string> terms = File.ReadAllText(expressionFileOutput).Split(Utility.BOOL_CONJUNCTION)
